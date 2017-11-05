@@ -17,8 +17,10 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import i.am.eipeks.projectcrypto.R;
+import i.am.eipeks.projectcrypto._model.Converter;
 import i.am.eipeks.projectcrypto._model.Country;
 import i.am.eipeks.projectcrypto._model.Crypto;
+import i.am.eipeks.projectcrypto._model.RetrofitClient;
 
 public class Home extends AppCompatActivity implements
         View.OnClickListener,
@@ -26,6 +28,8 @@ public class Home extends AppCompatActivity implements
 
     @BindView(R.id.add_new_card)
     private FloatingActionButton addCard;
+
+    private Converter converter;
 
     private View view;
     private Spinner cryptoSpinner, countrySpinner;
@@ -67,6 +71,8 @@ public class Home extends AppCompatActivity implements
         setContentView(R.layout.activity_home);
 
         initializeAdapters();
+
+        converter = RetrofitClient.getConverterClient();
 
         addCard.setOnClickListener(this);
 
