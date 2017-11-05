@@ -6,12 +6,56 @@
     android:layout_height="match_parent"
     tools:context="i.am.eipeks.projectcrypto._view.Home">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/dummy_layout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/transaction"
+            android:layout_above="@id/dummy_text"
+            android:contentDescription="@string/app_name"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dummy_text"
+            android:layout_alignParentBottom="true"
+            android:padding="20dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="No cards created yet"
+            tools:ignore="HardcodedText"
+            android:textColor="@android:color/darker_gray"/>
+
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_edit"
+        android:id="@+id/add_new_card"
+        app:fabSize="normal"
+        app:rippleColor="@android:color/white"
+        app:borderWidth="10dp"
+        app:backgroundTintMode="src_atop"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -10,4 +10,8 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="FAB" parent="AppTheme">
+        <item name="colorAccent">#e178c6</item>
+    </style>
+
 </resources>

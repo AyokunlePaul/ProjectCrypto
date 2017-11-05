@@ -2,4 +2,5 @@
 <resources>
     <dimen name="conversion_text_size">25sp</dimen>
     <dimen name="crypto_text_size">20sp</dimen>
+    <dimen name="country_text_size">50sp</dimen>
 </resources>

@@ -36,4 +36,9 @@ public class Country {
     public void setBtcValue(double btcValue) {
         this.btcValue = btcValue;
     }
+
+    @Override
+    public String toString(){
+        return this.countryName;
+    }
 }
