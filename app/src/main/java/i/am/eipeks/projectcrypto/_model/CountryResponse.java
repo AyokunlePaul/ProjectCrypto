@@ -10,13 +10,13 @@ public class CountryResponse {
             alternate = {"USD", "ARS", "ZAR", "DZD", "BRL", "GBP", "CNY", "XAF", "COP", "DKK", "ETB", "EUR",
             "INR", "ILS", "JPY", "MYR", "MXN", "QAR", "SAR"})
     @Expose
-    private String countryCode;
+    private String value;
 
-    public void setCountryCode(String countryCode){
-        this.countryCode = countryCode;
+    public void setValue(String value){
+        this.value = value;
     }
 
-    public String getCountryCode(){
-        return this.countryCode;
+    public String getValue(){
+        return this.value;
     }
 }

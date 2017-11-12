@@ -115,13 +115,34 @@ public class Home extends AppCompatActivity implements
     }
 
     private void convert(){
-        converter.convert(currentCountry.getCountryCode()).enqueue(new Callback<CountryResponse>() {
+        converter.convertBTC(currentCountry.getCountryCode()).enqueue(new Callback<CountryResponse>() {
             @Override
             public void onResponse(@NonNull Call<CountryResponse> call, @NonNull Response<CountryResponse> response) {
                 if (response.isSuccessful()){
                     switch (response.code()){
                         case 200:
+                            currentCountry.setBtcValue(Double.valueOf(response.body().getValue()));
+                            convertETH();
+                            break;
+                    }
+                }
+            }
 
+            @Override
+            public void onFailure(@NonNull Call<CountryResponse> call, @NonNull Throwable t) {
+
+            }
+        });
+    }
+
+    private void convertETH(){
+        converter.convertETH(currentCountry.getCountryCode()).enqueue(new Callback<CountryResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<CountryResponse> call, @NonNull Response<CountryResponse> response) {
+                if (response.isSuccessful()){
+                    switch (response.code()){
+                        case 200:
+                            currentCountry.setEthValue(Double.valueOf(response.body().getValue()));
                             break;
                     }
                 }

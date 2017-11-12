@@ -7,7 +7,10 @@ import retrofit2.http.Path;
 
 public interface Converter {
 
-    @GET("?fsym=BTC,ETH&tsyms={currency}")
-    Call<CountryResponse> convert(@Path("currency") String currency);
+    @GET("?fsym=BTC&tsyms={currency}")
+    Call<CountryResponse> convertBTC(@Path("currency") String currency);
+
+    @GET("?fsym=ETH&tsyms={currency}")
+    Call<CountryResponse> convertETH(@Path("currency") String currency);
 
 }
