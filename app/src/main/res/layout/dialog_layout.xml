@@ -1,75 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="70dp"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toStartOf="@id/dummy_view"
-        android:layout_toLeftOf="@id/dummy_view"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:text="Currency"
+        tools:ignore="HardcodedText"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Crypto"
-            tools:ignore="HardcodedText"
-            android:textSize="17sp"
-            android:textStyle="normal"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/white"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:id="@+id/country_spinner"
+        android:layout_gravity="end"
+        android:spinnerMode="dialog"/>
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/crypto_spinner"
-            android:layout_gravity="end"
-            android:spinnerMode="dialog" />
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="5dp"
-        android:layout_height="1dp"
-        android:id="@+id/dummy_view"
-        android:layout_centerInParent="true"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toEndOf="@id/dummy_view"
-        android:layout_toRightOf="@id/dummy_view"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Currency"
-            tools:ignore="HardcodedText"
-            android:textSize="17sp"
-            android:textStyle="normal"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/white"/>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/country_spinner"
-            android:layout_gravity="end"
-            android:spinnerMode="dialog" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>
